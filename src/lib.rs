@@ -2,7 +2,7 @@
 //!
 //! # Example
 //!
-//! ```
+//! ```no_run
 //! use wslpath2::{convert, Conversion};
 //!
 //! let path = convert("/mnt/c", None, Conversion::WslToWindows, false).unwrap_or_default();
@@ -39,7 +39,7 @@ pub enum Conversion {
 ///
 /// # Example
 ///
-/// ```
+/// ```no_run
 /// use wslpath2::{convert, Conversion};
 ///
 /// let path = convert("/mnt/c", None, Conversion::WslToWindows, false).unwrap_or_default();
@@ -107,9 +107,10 @@ pub fn convert(
 mod tests {
     use crate::{convert, Conversion};
 
-    // These tests may not execute on all machines as they require WSL
+    // Run ignored tests on Windows with a configured WSL distribution.
 
     #[test]
+    #[ignore = "requires a configured WSL distribution"]
     fn test_wsl_to_windows() {
         assert_eq!(
             convert("/mnt/c", None, Conversion::WslToWindows, false).unwrap_or_default(),
@@ -118,6 +119,7 @@ mod tests {
     }
 
     #[test]
+    #[ignore = "requires a configured WSL distribution"]
     fn test_wsl_to_windows_absolute() {
         assert_eq!(
             convert("/mnt/c", None, Conversion::WslToWindows, true).unwrap_or_default(),
@@ -126,6 +128,7 @@ mod tests {
     }
 
     #[test]
+    #[ignore = "requires a configured WSL distribution"]
     fn test_wsl_to_windows_linux_style() {
         assert_eq!(
             convert("/mnt/c", None, Conversion::WslToWindowsLinuxStyle, false).unwrap_or_default(),
@@ -134,6 +137,7 @@ mod tests {
     }
 
     #[test]
+    #[ignore = "requires a configured WSL distribution"]
     fn test_wsl_to_windows_linux_style_absolute() {
         assert_eq!(
             convert("/mnt/c", None, Conversion::WslToWindowsLinuxStyle, true).unwrap_or_default(),
@@ -142,6 +146,7 @@ mod tests {
     }
 
     #[test]
+    #[ignore = "requires a configured WSL distribution"]
     fn test_windows_to_wsl() {
         assert_eq!(
             convert("C:/", None, Conversion::WindowsToWsl, false).unwrap_or_default(),
@@ -150,6 +155,7 @@ mod tests {
     }
 
     #[test]
+    #[ignore = "requires a configured WSL distribution"]
     fn test_windows_to_wsl_absolute() {
         assert_eq!(
             convert("C:/", None, Conversion::WindowsToWsl, true).unwrap_or_default(),
