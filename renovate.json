@@ -3,6 +3,7 @@
   "extends": [
     "github>michidk/workflows//templates/renovate"
   ],
+  "forkProcessing": "enabled",
   "packageRules": [
     {
       "matchManagers": [
