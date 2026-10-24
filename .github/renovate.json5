@@ -3,13 +3,5 @@
   "extends": [
     "github>michidk/workflows//templates/renovate"
   ],
-  "forkProcessing": "enabled",
-  "packageRules": [
-    {
-      "matchManagers": [
-        "cargo"
-      ],
-      "groupName": "All Cargo Dependencies"
-    }
-  ]
+  "forkProcessing": "enabled"
 }
