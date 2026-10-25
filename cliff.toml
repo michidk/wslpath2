@@ -31,3 +31,6 @@ commit_parsers = [
 ]
 filter_commits = false
 tag_pattern = "v[0-9].*"
+
+[bump]
+initial_tag = "0.1.3"
